@@ -1,0 +1,45 @@
+[
+  {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+      "username": "Superadmin",
+      "password": "pbkdf2_sha256$216000$n9KVIm3Z7NZn$Zupx+5Q5mqppuacDVTHY2QixuMml+pEOI9T843Cm/go=",
+      "is_superuser": 1,
+      "email": "admin@shosho.com",
+      "first_name": "Нижейко",
+      "last_name": "Виталий",
+      "is_active": 1,
+      "is_staff": 1
+    }
+  },
+   {
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+      "username": "manage",
+      "password": "pbkdf2_sha256$216000$n9KVIm3Z7NZn$Zupx+5Q5mqppuacDVTHY2QixuMml+pEOI9T843Cm/go=",
+      "is_superuser": 0,
+      "email": "admin@shosho.com",
+      "first_name": "Иванов",
+      "last_name": "Иван",
+      "is_active": 1,
+      "is_staff": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "auth.user",
+    "fields": {
+      "username": "client",
+      "password": "pbkdf2_sha256$216000$n9KVIm3Z7NZn$Zupx+5Q5mqppuacDVTHY2QixuMml+pEOI9T843Cm/go=",
+      "is_superuser": 0,
+      "email": "admin@shosho.com",
+      "first_name": "Клиент",
+      "last_name": "Клиент",
+      "is_active": 1,
+      "is_staff": 0
+    }
+  }
+]
+

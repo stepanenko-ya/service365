@@ -1,0 +1,47 @@
+.back{
+    background-image: url('/static/image/back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.table_main{
+    background: white;
+    border-color: #93afd7;
+
+}
+.markup{
+    font-size: larger;
+    font-weight: bold;
+
+}
+.check_status{
+    width: 400px;
+    height: 180px;
+    background: #4688dc;
+    padding: 40px 50px 50px 50px;
+    margin: 40px 10px 70px 770px;
+    /*margin-bottom: 70px;*/
+    /*margin-left: 770px;*/
+    border-radius: 15px;
+}
+.update{
+    text-align: center;
+    border: 3px #0056b3 solid;
+    border-radius: 1%;
+    width: 360px;
+}
+.search_order{
+
+    padding-left: 35%;
+}
+.contacts{
+    background: #4688dc;
+    width: 25%;
+    color: white;
+    margin-top: 100px;
+    margin-left: 37%;
+    margin-right: 37%;
+    padding: 90px 30px 90px 30px;
+    border-radius: 15px;
+
+}
+

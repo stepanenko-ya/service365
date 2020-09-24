@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  {% load static %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="back">
+{% if user.is_authenticated %}
+<ul class="nav nav-pills bg-dark text-white mb-5">
+  <li class="nav-item">
+    <a class="nav-link active " href="/">Главная</a>
+  </li>
+{% if xxx != "Client" %}
+  <li class="nav-item ">
+    <a class="nav-link " href="{% url 'new_order' %}">Новый заказ</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/main/">Все заказы</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/archive/">Выполнено</a>
+  </li>
+  {% endif %}
+  <li class="nav-item  mr-auto">
+    <a class="nav-link disabled " href="/accounts/logout/"  tabindex="-1" aria-disabled="">Выход</a>
+  </li>
+</ul>
+{% else %}
+<ul class="nav nav-pills bg-dark text-white mb-1">
+  <li class="nav-item">
+    <a class="nav-link active " href="/">Главная</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/contacts/">Наши контакты</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="/accounts/login/">Войти</a>
+  </li>
+
+</ul>
+
+{% endif %}
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

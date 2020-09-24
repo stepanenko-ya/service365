@@ -1,0 +1,33 @@
+{% include "base.html" %}
+{% block content %}
+
+
+
+<h3 class="text-center text-dark mt-5">Поиск заказа</h3>
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="check_status" >
+
+        <p><input class="text-center"
+                  type="text"
+                  size="30"
+                  placeholder="Ваш номер заказа"
+                  name="search_order"></p>
+        <div class="search_order">
+            <button class="btn btn-outline-light" type="submit">
+                Поиск
+            </button>
+        </div>
+    </div>
+</form>
+
+{% if result.order_status %}
+<h4 align="center">
+    {{result.name_client}}, Ваш заказ {{result.order_status}}.
+</h4>
+{% endif %}
+
+
+
+
+{% endblock %}

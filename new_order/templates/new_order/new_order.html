@@ -1,0 +1,25 @@
+{% include "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+
+             <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+             <fieldset>
+                 {% for field in form %}
+                 <div class="control-group {% if field.errors %}has_error{% endif %}">
+                     <label class="control-label">{{ field.label }}</label>
+                     <div class="controls">{{ field }}</div>
+                 </div>
+                 {% endfor %}
+                  <button type="submit" class="btn btn-primary">Сохранить</button>
+             </fieldset>
+             </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% include "base.html"%}
+{% block content %}
+<h1 class="text-lg-center text-white">Заявки выполненны</h1>
+<table border="3" cellspacing="0" cellpadding="4" width="90%" align="center"
+       class="table_main">
+
+    <tr class="markup">
+    <td>Дата приема</td>
+    <td>Фамилия</td>
+    <td>Имя</td>
+    <td>Номер телефона</td>
+    <td>Серийный номер</td>
+    <td>Тип устройства</td>
+    <td>Сервисная работа</td>
+    <td>Статус заказа</td>
+    <td>Менеджер</td>
+    <td>Метод оплаты</td>
+    <td>Стоимисть</td>
+    <td>Комментарий</td>
+</tr>
+
+{% for i in done %}
+    <tr>
+    <td> {{ i.created|date:'d. m. Y' }}</td>
+    <td>{{ i.surname }}</td>
+    <td>{{ i.name_client }}</td>
+    <td>{{ i.phone_number }}</td>
+    <td>{{ i.serial_number }}</td>
+    <td>{{ i.device_type }}</td>
+    <td>{{ i.service_work }}</td>
+    <td>{{ i.order_status }}</td>
+    <td>{{i.manager}}</td>
+    <td>{% if i.payment_method == None %}
+        -
+        {% else %}
+        {{i.payment_method}}
+        {% endif %}
+    </td>
+    <td>{{i.price}}</td>
+    <td>{{i.comment}}</td>
+    </tr>
+{% endfor %}
+
+</table>
+
+
+
+
+{% endblock %}

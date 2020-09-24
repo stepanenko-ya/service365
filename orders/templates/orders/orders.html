@@ -1,0 +1,54 @@
+{% include "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+
+                <input class="form-control my-3" name="name_client" type="text" value="{{client.name_client}}" >
+                <input class="form-control my-3" name="last_name" type="text" value='{{client.surname}}'>
+                <input class="form-control my-3" name="phone" type="text" value="{{client.phone_number}}" >
+                <input class="form-control my-3" name= "serial_number" type="text" value ="{{client.serial_number}}">
+                <select name="device">
+                    <option>{{client.device_type}}</option>
+                    {% for device in devices %}
+                    <option>{{ device }}</option>
+                    {% endfor %}
+                </select>
+                <select name ="status">
+                    <option>{{client.order_status}}</option>
+                    {% for status in statuses%}
+                    <option>{{status}}</option>
+                    {% endfor %}
+                </select>
+                <div class="form-control my-3">{{client.manager}}</div>
+                <select name="method_point">
+                    <option>
+                        {% if client.payment_method == None %}
+                        ---
+                        {% endif %}
+                    </option>
+                    {% for method in methods_payment %}
+                    <option>{{method}}</option>
+                    {% endfor %}
+                </select>
+                <input type="number" name="coast" value="{{client.price}}">
+                <input type="text" name="comment" {{client.comment}}>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+
+            </form>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}
