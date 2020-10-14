@@ -32,12 +32,11 @@ class Service(models.Model):
 class Order(models.Model):
     name_client = models.CharField(max_length=50, null=True, blank=True)
     surname = models.CharField(max_length=150, null=True, blank=True)
-    phone_number = models.CharField(max_length=10, null=True, blank=True)
+    phone_number = models.CharField(max_length=13, null=True, blank=True)
     serial_number = models.CharField(max_length=30, null=True, blank=True)
     device_type = models.ForeignKey(Device, on_delete=models.CASCADE,
                                     null=True, blank=True)
-    service_work = models.ForeignKey(Service, on_delete=models.CASCADE,
-                                     null=True, blank=True)
+    # service_work = models.ManyToManyField(Service, blank=True)
     order_status = models.ForeignKey(Status, on_delete=models.CASCADE,
                                      null=True, blank=True)
     manager = models.CharField(max_length=30, null=True, blank=True)

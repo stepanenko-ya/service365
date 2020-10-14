@@ -12,6 +12,4 @@ def archive(request):
     return render(request, "archive/archive.html", locals())
 
 
-def client_order(request):
-    # orders = Order.objects.filter(id=)
-    return render(request, "archive/client_order.html", locals())
+

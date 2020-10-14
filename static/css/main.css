@@ -1,27 +1,65 @@
 .back{
-    background-image: url('/static/image/back.jpg');
+    background-image: url('/static/image/back.png');
     background-repeat: no-repeat;
     background-size: cover;
+
+
+}
+.header{
+    background: #6f564e;
+    opacity: 0.96;
+    font-size: large;
+    font-weight: bold;
+    height: 50px;
+}
+.colorId{
+    color: #ffffff;
+}
+.colorId:hover{
+    color: #211304;
+}
+.textNav{
+    color: #adf6f9;
+}
+.logOut{
+    color: chocolate;
+}
+.title{
+    color: #544141;
+    font-weight: bold;
+    font-style: revert;
+    font-family: KacstArt;
 }
 .table_main{
-    background: white;
-    border-color: #93afd7;
-
+    background: #5f9ea0;
+    border-radius: 20px;
+    color: #f6f5f6;
+    margin-top: 100px;
 }
 .markup{
     font-size: larger;
     font-weight: bold;
-
+    text-align: center;
+    color: rgb(84, 65, 65);
+    background: #d6dad6;
+    border-radius: 20px;
 }
 .check_status{
     width: 400px;
     height: 180px;
-    background: #4688dc;
+    background: #5f9ea0;
     padding: 40px 50px 50px 50px;
     margin: 40px 10px 70px 770px;
-    /*margin-bottom: 70px;*/
-    /*margin-left: 770px;*/
     border-radius: 15px;
+    color: #544141;
+}
+.check_status_title{
+    color: #544141;
+    margin-top: 50px;
+    text-align: center;
+
+    font-family: KacstArt;
+    font-weight: bold;
 }
 .update{
     text-align: center;
@@ -30,11 +68,10 @@
     width: 360px;
 }
 .search_order{
-
     padding-left: 35%;
 }
 .contacts{
-    background: #4688dc;
+    background:  #5f9ea0;
     width: 25%;
     color: white;
     margin-top: 100px;
@@ -44,4 +81,46 @@
     border-radius: 15px;
 
 }
+.indent{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
 
+
+a:hover {
+    text-decoration: none;
+    color: #fdfcfc;
+   }
+.new_order{
+    text-align: center;
+    background: #5f9ea0;
+    border-radius: 20px;
+    color: #f6f5f6;
+    width: auto;
+    /*padding-right: 50px;*/
+    /*padding-left: 50px;*/
+    padding: 30px 50px 50px 50px ;
+    font-weight: bold;
+    margin-bottom: 150px;
+}
+.new_order_save{
+    background: #f5781f;
+    color: #ffffff;
+    opacity: 0.9;
+    font-family: KacstTitle;
+    font-size: large;
+    font-weight: bold;
+    margin: 30px 50px 30px 50px;
+}
+
+.comment{
+    background: #ffffff;
+    width: 250px;
+    height: 150px;
+}
+
+.new_order_field{
+    background: #ffffff;
+    width: 250px;
+    /*margin-left: 20px;*/
+}

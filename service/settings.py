@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'archive',
     'home',
     'contacts',
+    'my_orders',
+    "done_id"
 
 ]
 

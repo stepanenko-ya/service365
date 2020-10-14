@@ -6,9 +6,9 @@ from. models import Order, Status
 @login_required
 def main(request):
 
-    r = Status.objects.get(status="Выдан")
+    done = Status.objects.get(status="Выдан")
     x = Order.objects.all()
-    order = x.exclude(order_status=r)[::-1]
+    order = x.exclude(order_status=done)[::-1]
     ready = Status.objects.get(status="Готов")
 
     return render(request, "main/main.html", locals())

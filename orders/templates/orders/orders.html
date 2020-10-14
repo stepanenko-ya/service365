@@ -4,29 +4,55 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 new_order">
 
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
+                <p class="indent"><b>Имя:</b></p>
+                <input class="form-control my-3" name="name_client" type="text" value="{{client.name_client}}">
 
-                <input class="form-control my-3" name="name_client" type="text" value="{{client.name_client}}" >
-                <input class="form-control my-3" name="last_name" type="text" value='{{client.surname}}'>
-                <input class="form-control my-3" name="phone" type="text" value="{{client.phone_number}}" >
+                <p class="indent"><b>Фамилия:</b></p>
+                <input class="form-control my-1" name="last_name" type="text" value='{{client.surname}}'>
+
+                <p class="indent"><b>Телефон:</b></p>
+                <input class="form-control my-3" name="phone" type="text" value="{{client.phone_number}}">
+
+                <p class="indent"><b>Серийный номер:</b></p>
                 <input class="form-control my-3" name= "serial_number" type="text" value ="{{client.serial_number}}">
+
+<!--                <p class="indent"><b>Сервисная работа:</b></p>-->
+<!--                <select name="service_work">-->
+<!--                    <option>{{client.service_work}}</option>-->
+<!--                    {% for service in service_work %}-->
+<!--                    <option>{{service}}</option>-->
+<!--                    {% endfor %}-->
+<!--                </select>-->
+
+
+
+                <p class="indent"><b>Вид устройства:</b></p>
                 <select name="device">
                     <option>{{client.device_type}}</option>
                     {% for device in devices %}
                     <option>{{ device }}</option>
                     {% endfor %}
                 </select>
+                
+
+                <p class="indent"><b>Статус заказа:</b></p>
                 <select name ="status">
                     <option>{{client.order_status}}</option>
                     {% for status in statuses%}
                     <option>{{status}}</option>
                     {% endfor %}
                 </select>
-                <div class="form-control my-3">{{client.manager}}</div>
+
+                <p class="indent"><b>Менеджер:</b></p>
+                <input class="form-control my-3" type="text" value="{{client.manager}}" disabled>
+
+                <p class="indent"><b>Метод оплаты:</b></p>
                 <select name="method_point">
                     <option>
                         {% if client.payment_method == None %}
@@ -37,18 +63,19 @@
                     <option>{{method}}</option>
                     {% endfor %}
                 </select>
+
+
+                <p class="indent"><b>Стоимомсть:</b></p>
                 <input type="number" name="coast" value="{{client.price}}">
-                <input type="text" name="comment" {{client.comment}}>
-                <button type="submit" class="btn btn-primary">Сохранить</button>
+
+
+                <p class="indent"><b>Комментарий:</b></p>
+                <input type="text" name="comment" value="{{client.comment}}">
+                <br>
+                <button type="submit" class="btn  new_order_save">Сохранить</button>
 
             </form>
         </div>
     </div>
   </div>
-
-
-
-
-
-
 {% endblock %}

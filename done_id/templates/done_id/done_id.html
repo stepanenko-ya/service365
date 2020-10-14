@@ -1,0 +1,53 @@
+{% include "base.html" %}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 new_order">
+            <p class="indent"><b>Номер заказа:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.id}}" disabled>
+
+            <p class="indent"><b>Имя:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.name_client}}" disabled>
+
+            <p class="indent"><b>Фамилия:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.surname}}" disabled>
+
+            <p class="indent"><b>Телефон:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.phone_number}}" disabled>
+
+            <p class="indent"><b>Серийный номер:</b></p>
+            <input class="form-control my-3 " type="text" value="{{order.serial_number}}" disabled>
+
+            <p class="indent"><b>Вид устройства:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.device_type}}" disabled>
+
+            <p class="indent"><b>Статус заказа:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.order_status}}" disabled>
+
+            <p class="indent"><b>Менеджер:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.manager}}" disabled>
+
+            <p class="indent"><b>Метод оплаты:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.payment_method}}" disabled>
+
+            <p class="indent"><b>Сумма:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.price}}" disabled>
+
+            <p class="indent"><b>Комментарий:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.comment}}" disabled>
+
+
+            <p class="indent"><b>Дата приема в работу:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.created|date:'d . m . Y' }}" disabled>
+
+
+            <p class="indent"><b>Дата выдачи:</b></p>
+            <input class="form-control my-3" type="text" value="{{order.updated|date:'d - m -  Y'}}" disabled>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

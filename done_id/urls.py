@@ -2,6 +2,5 @@ from django.urls import path
 from. import views
 
 urlpatterns = [
-    path("archive/", views.archive, name="archive"),
-
+    path("done_id/", views.done_id, name="done_id")
 ]

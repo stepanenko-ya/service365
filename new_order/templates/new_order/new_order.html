@@ -2,20 +2,26 @@
 {% block content %}
 <div class="container">
     <div class="row">
+        <div class="col-lg-4"></div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-4 new_order">
 
 
              <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+
              <fieldset>
+
                  {% for field in form %}
-                 <div class="control-group {% if field.errors %}has_error{% endif %}">
+                 <div class="control-group
+                 {% if field.errors %}has_error{% endif %}">
                      <label class="control-label">{{ field.label }}</label>
                      <div class="controls">{{ field }}</div>
                  </div>
                  {% endfor %}
-                  <button type="submit" class="btn btn-primary">Сохранить</button>
+                  <button type="submit" class="btn btn new_order_save">
+                      Сохранить
+                  </button>
              </fieldset>
              </form>
 

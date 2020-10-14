@@ -3,46 +3,50 @@
 {% block content %}
 
 
-<table border="2" cellspacing="0" cellpadding="4" width="90%" align="center"
+<table border="0" cellspacing="4" cellpadding="4" width="90%" align="center"
        class="table_main">
-<tr class="markup">
-    <td>Дата приема</td>
-    <td>Фамилия</td>
-    <td>Имя</td>
-    <td>Номер телефона</td>
-    <td>Серийный номер</td>
-    <td>Тип устройства</td>
-    <td>Сервисная работа</td>
-    <td>Статус заказа</td>
-    <td>Менеджер</td>
-    <td>Метод оплаты</td>
-    <td>Стоимисть</td>
-    <td>Комментарий</td>
+    <thead>
+<tr class="markup" align="center">
+    <th>Номер заказа</th>
+    <th>Статус заказа</th>
+    <th>Дата приема</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Номер телефона</th>
+    <th>Серийный номер</th>
+    <th>Тип устройства</th>
+    <th>Сервисная работа</th>
+    <th>Менеджер</th>
+    <th>Метод оплаты</th>
+    <th>Стоимисть</th>
+    <th>Комментарий</th>
 </tr>
+</thead>
 {% for i in order %}
-<tr align="center">
-    <td>{{ i.created|date:'d. m. Y' }}</td>
-    <td>
-        <a href="/orders/?name_id={{i.id}}">
-            {{ i.surname }}
-        </a>
-    </td>
-    <td>{{ i.name_client }}</td>
-    <td>{{ i.phone_number }}</td>
-    <td>{{ i.serial_number }}</td>
-    <td>{{ i.device_type }}</td>
-    <td>{{ i.service_work }}</td>
-    <td>{{ i.order_status }}</td>
-    <td>{{i.manager}}</td>
-    <td>{% if i.payment_method == None %}
-        -
-        {% else %}
-        {{i.payment_method}}
-        {% endif %}
+    <tr align="center">
+        <td>
+            <a href="/orders/?name_id={{i.id}}" class="colorId">
+                {{ i.id }}
+            </a>
         </td>
-    <td>{{i.price}}</td>
-    <td>{{i.comment}}</td>
-</tr>
+        <td>{{ i.order_status }}</td>
+        <td>{{ i.created|date:'d. m. Y' }}</td>
+        <td>{{ i.surname }}</td>
+        <td>{{ i.name_client }}</td>
+        <td>{{ i.phone_number }}</td>
+        <td>{{ i.serial_number }}</td>
+        <td>{{ i.device_type }}</td>
+        <td>{{ i.service_work }}</td>
+        <td>{{i.manager}}</td>
+        <td>{% if i.payment_method == None %}
+            -
+            {% else %}
+            {{i.payment_method}}
+            {% endif %}
+            </td>
+        <td>{{i.price}}</td>
+        <td>{{i.comment}}</td>
+    </tr>
 {% endfor %}
 </table>
 
