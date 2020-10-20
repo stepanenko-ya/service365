@@ -22,9 +22,9 @@ def new_order(request):
             service_works = form.cleaned_data.get('service_work')
             form.save()
 
-            print(service_works)
 
-            x = form.save() # commit=False
+
+            x = form.save()# commit=False
             x.save()
             form.save_m2m()
 
