@@ -3,10 +3,10 @@ from main.models import Order, Device, Service, Status, Coast
 
 
 class OrderForm(forms.Form):
-    name_client = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'new_order_field'}), label='Имя клиента', max_length=50)
+    # name_client = forms.CharField(widget=forms.TextInput(
+    #     attrs={'class': 'new_order_field'}), label='Имя клиента', max_length=50)
 
-    # name_client = forms.CharField(max_length=50, label='Имя клиента' )
+    name_client = forms.CharField(max_length=50, label='Имя клиента' )
     surname = forms.CharField(widget=forms.TextInput(
         attrs={'class': 'new_order_field'}), max_length=50, label="Фамилия")
     phone_number = forms.CharField(widget=forms.TextInput(
@@ -16,8 +16,8 @@ class OrderForm(forms.Form):
                                          label="Вид устройства")
     serial_number = forms.CharField(max_length=14,
                                     label="Серийный номер устройства")
-    # service_work = forms.ModelMultipleChoiceField(queryset=Service.objects.all()
-    #                                               , label="Вид работы")
+    service_work = forms.ModelMultipleChoiceField(queryset=Service.objects.all()
+                                                  , label="Вид работы")
     order_status = forms.ModelChoiceField(queryset=Status.objects.all(),
                                           label="Статус заказа")
     manager = forms.CharField(widget=forms.TextInput(

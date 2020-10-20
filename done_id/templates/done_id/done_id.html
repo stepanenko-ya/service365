@@ -1,7 +1,6 @@
 {% include "base.html" %}
 {% block content %}
 <div class="container">
-
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4 new_order">
@@ -30,7 +29,12 @@
             <input class="form-control my-3" type="text" value="{{order.manager}}" disabled>
 
             <p class="indent"><b>Метод оплаты:</b></p>
-            <input class="form-control my-3" type="text" value="{{order.payment_method}}" disabled>
+            <input class="form-control my-3" type="text"
+            value="{% if order.payment_method == None%}
+            -
+            {% else %}
+            {{order.payment_method}}
+            {% endif %}" disabled>
 
             <p class="indent"><b>Сумма:</b></p>
             <input class="form-control my-3" type="text" value="{{order.price}}" disabled>

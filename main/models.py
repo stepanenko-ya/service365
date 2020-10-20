@@ -36,7 +36,7 @@ class Order(models.Model):
     serial_number = models.CharField(max_length=30, null=True, blank=True)
     device_type = models.ForeignKey(Device, on_delete=models.CASCADE,
                                     null=True, blank=True)
-    # service_work = models.ManyToManyField(Service, blank=True)
+    service_work = models.ManyToManyField(Service, blank=True)
     order_status = models.ForeignKey(Status, on_delete=models.CASCADE,
                                      null=True, blank=True)
     manager = models.CharField(max_length=30, null=True, blank=True)

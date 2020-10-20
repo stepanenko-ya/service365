@@ -10,19 +10,25 @@ t = turbosmsua.Turbosms('office222333', '123456')
 @login_required
 def new_order(request):
     current_user = request.user.first_name
-
     OrderForm.manager = current_user
 
     if request.method == "POST":
         form = OrderForm(request.POST)
         in_the_work = Status.objects.get(status="В работе")
-                                          # определяет юзера.фамилия
-        form.manager = current_user
 
+        form.manager = current_user   # определяет юзера.фамилия
 
         if form.is_valid():
-            x = form.save()
-            status_client = x.order_status
+            service_works = form.cleaned_data.get('service_work')
+            form.save()
+
+            print(service_works)
+
+            # x = form.save() # commit=False
+            # x.save()
+            # form.save_m2m()
+
+            # status_client = x.order_status
             # if status_client == in_the_work:
             #     send_statuses = t.send_text("stepdevelop",
             #                                 [x.phone_number],

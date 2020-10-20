@@ -25,7 +25,7 @@ def orders(request):
         client.serial_number = request.POST.get("serial_number")
         client.price = request.POST.get("coast")
         client.comment = request.POST.get("comment")
-        client.service_work = Service.objects.get(service=request.POST.get("service_work"))
+        # client.service_work = Service.objects.get(service=request.POST.get("service_work"))
         client.device_type = Device.objects.get(type=request.POST.get("device"))
         client.order_status = Status.objects.get(status=request.POST.get("status"))
 
@@ -40,13 +40,13 @@ def orders(request):
         client.payment_method = method_object                     # тогда записываем в БД ничего или то что нашли в БД
         client.save()
 
-        # if current_status != client.order_status and client.order_status == ready:
-        #
-        #     t.balance()
-        #     send_statuses = t.send_text("stepdevelop",
-        #                                 [client.phone_number],
-        #                                 "Ваш заказ готов.")
-        #     print(send_statuses)
+        if current_status != client.order_status and client.order_status == ready:
+
+            t.balance()
+            send_statuses = t.send_text("stepdevelop",
+                                        [client.phone_number],
+                                        "Ваш заказ готов.")
+            print(send_statuses)
 
         return redirect("/main/")
 

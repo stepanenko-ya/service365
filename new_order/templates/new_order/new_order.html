@@ -13,15 +13,21 @@
              <fieldset>
 
                  {% for field in form %}
-                 <div class="control-group
-                 {% if field.errors %}has_error{% endif %}">
-                     <label class="control-label">{{ field.label }}</label>
-                     <div class="controls">{{ field }}</div>
-                 </div>
+                     {{ field.name_client }}
+                     {{ field.surname }}
+
+<!--                     <div class="control-group-->
+<!--                   {% if field.errors %}has_error{% endif %}">-->
+                        <label class="control-label">{{ field.label }}</label>
+                        <div class="controls">{{ field }}</div>
+                        <div>{{ field.name_client }}</div>
+<!--                     </div>-->
+
                  {% endfor %}
-                  <button type="submit" class="btn btn new_order_save">
-                      Сохранить
-                  </button>
+
+                 <button type="submit" class="btn btn new_order_save">
+                     Сохранить
+                 </button>
              </fieldset>
              </form>
 
