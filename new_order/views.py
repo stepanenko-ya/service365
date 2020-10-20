@@ -24,18 +24,18 @@ def new_order(request):
 
             print(service_works)
 
-            # x = form.save() # commit=False
-            # x.save()
-            # form.save_m2m()
+            x = form.save() # commit=False
+            x.save()
+            form.save_m2m()
 
-            # status_client = x.order_status
-            # if status_client == in_the_work:
-            #     send_statuses = t.send_text("stepdevelop",
-            #                                 [x.phone_number],
-            #                                 "Ваша заявка с номером " + str(
-            #                                     x.id) +
-            #                                 " создана. Посмотреть ее статус вы можете на нашем сайте.")
-            #     print(send_statuses)
+            status_client = x.order_status
+            if status_client == in_the_work:
+                send_statuses = t.send_text("stepdevelop",
+                                            [x.phone_number],
+                                            "Ваша заявка с номером " + str(
+                                                x.id) +
+                                            " создана. Посмотреть ее статус вы можете на нашем сайте.")
+                print(send_statuses)
 
             return HttpResponseRedirect("http://127.0.0.1:8000/main/")
     else:
